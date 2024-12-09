@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ask Her Out</title>
+
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+        body {
+            overflow: hidden;
+        }
+        .falling-object {
+            position: fixed;
+            top: -50px;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div
+        class="tenor-gif-embed"
+        data-postid="22885016"
+        data-share-method="host"
+        data-aspect-ratio="1.04918"
+        data-width="100%"
+      >
+        <a href="https://tenor.com/view/manja-gif-22885016">Manja Sticker</a
+        >from
+        <a href="https://tenor.com/search/manja-stickers">Manja Stickers</a>
+      </div>
+      <script
+        type="text/javascript"
+        async
+        src="https://tenor.com/embed.js"
+      ></script>
+      <h1>Hi Sam, would you like to hang out with me? 🤗</h1>
+      <p>Are you free in the afternoon after the Christmas party?</p>
+
+      <div class="btn">
+        <a href="yes.html">Yes</a>
+        <a href="no1.html">No</a>
+      </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const symbols = ['❄️', '🌸', '❤️'];
+            const createFallingObject = () => {
+                const element = document.createElement('div');
+                element.className = 'falling-object';
+                element.style.left = Math.random() * 100 + 'vw';
+                element.style.animationDuration = 5 + Math.random() * 5 + 's';
+                element.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+                document.body.appendChild(element);
+                setTimeout(() => {
+                    document.body.removeChild(element);
+                }, 10000);
+            };
+            setInterval(createFallingObject, 500);
+        });
+    </script>
+  </body>
+</html>
